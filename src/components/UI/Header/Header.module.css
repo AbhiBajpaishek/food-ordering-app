@@ -1,0 +1,16 @@
+.navbar{
+    background-color: brown;
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 9rem;
+    
+    align-items: center;
+}
+
+
+
+.navbar-item{
+    font-size: 1.5rem;
+}
