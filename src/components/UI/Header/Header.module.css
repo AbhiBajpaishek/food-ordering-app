@@ -2,11 +2,13 @@
     background-color: brown;
     color: white;
     height: 70px;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     padding: 0px 9rem;
-    
+    position: fixed;
     align-items: center;
+    z-index: 200;
 }
 
 

@@ -1,0 +1,31 @@
+.image{
+    background-image: url(../../Images/meals.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 320px;
+    background-position: 0px 40%;
+}
+
+.banner{
+    position: absolute;
+    background-color: #313131;
+    color: white;
+    padding: 1rem;
+    top: 226px;
+    left: 415px;
+    height: 170px;
+    width: 650px;
+    box-shadow: 1px 1px 13px black;
+}
+
+.banner p{
+    margin: 1rem;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.food-menu{
+    background-color: #313131;
+    color: white;
+    padding: 100px 0;
+}
