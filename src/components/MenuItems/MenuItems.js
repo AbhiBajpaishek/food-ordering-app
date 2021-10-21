@@ -1,8 +1,25 @@
-import React from "react";
+import React, {useState,useContext} from "react";
 import Button from "../UI/Button/Button";
 import styles from "./MenuItems.module.css";
+import CartContext from "../context/cart-context";
 
 const MenuItems = (props) => {
+
+  const [quantity,setQuantity] = useState(1);
+
+  const quantityChangeHandler = (event) =>{
+      setQuantity(Number(event.target.value));
+  }
+
+  const ctx=useContext(CartContext);
+  const addClickHandler = () =>{
+     ctx.addItem({
+       dishName:props.dishName,
+       dishPrice:props.dishPrice,
+       dishQuantity:quantity
+     })
+  }
+
   return (
     <div className={styles["menu-item"]} > 
       <div className={styles["menu-item__details"]}>
@@ -27,12 +44,15 @@ const MenuItems = (props) => {
             <input
               type="number"
               className={styles["menu-item__details-actions__quantity"]}
-              value={1}
+              value={quantity}
+              min="1"
+              max="5"
+              onChange={quantityChangeHandler}
             ></input>
           </div>
         </div>
         <div>
-            <Button value="+Add"></Button>
+            <Button value="+Add" onClick = {addClickHandler}></Button>
         </div>
       </div>
     </div>

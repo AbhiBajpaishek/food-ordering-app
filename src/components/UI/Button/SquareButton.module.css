@@ -1,0 +1,10 @@
+.square-btn{
+    background-color: white;
+    color: brown;
+    border: 1px solid brown;
+    border-radius: 5px;
+    height: 22px;
+    width: 40px;
+    margin: 0.3rem;
+    cursor: pointer;
+}

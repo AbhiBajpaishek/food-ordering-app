@@ -1,0 +1,23 @@
+.cart-item__container{
+    position: fixed;
+    margin: auto;
+    width: 500px;
+    top: 150px;
+    left: 487px;
+    background-color: white;
+    z-index: 500;
+    color: black;
+    padding: 1rem;
+}
+
+
+.hr-line{
+    color: brown;
+    height: 10px;
+}
+
+
+.cart-items__footer{
+    display: flex;
+    justify-content: space-between;
+}

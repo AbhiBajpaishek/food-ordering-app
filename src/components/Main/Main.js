@@ -4,6 +4,7 @@ import Card from "../UI/Card/Card";
 import styles from './Main.module.css'; 
 
 const Main = () =>{
+
     return <main>
             <div className={styles.image}></div>
             <Card className= {styles.banner}>
@@ -12,7 +13,8 @@ const Main = () =>{
                 <p>All meals are cooked with high quality ingredients, just-in-time and ofcourse by experienced chefs!</p>
             </Card>
             <div className={styles["food-menu"]}>
-            <FoodMenu></FoodMenu>
+            <FoodMenu ></FoodMenu>
+            
             </div>
     </main>
 }
