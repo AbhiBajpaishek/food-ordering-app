@@ -9,7 +9,6 @@ const defaultState = {
 const cartReducer = (state, action) => {
   let updatedItems;
   let updatedAmount;
-  let newItem=true;
   if (action.type === "ADD") {
     updatedAmount = state.totalAmount + (action.item.dishPrice * action.item.dishQuantity);
     const updatedItemIndex = state.items.findIndex(item => item.dishName === action.item.dishName);
@@ -31,9 +30,9 @@ const cartReducer = (state, action) => {
     const updatedItemIndex = state.items.findIndex(item => item.dishName === action.item.dishName);
     updatedAmount = state.totalAmount - action.item.dishPrice;
     if(action.item.dishQuantity===0)
-      updatedItems = state.items.filter(item => item.dishName != action.item.dishName);
+      updatedItems = state.items.filter(item => item.dishName !== action.item.dishName);
     else{
-      updatedItems = state.items;
+      updatedItems = [...state.items];
       updatedItems[updatedItemIndex].dishQuantity--;
     }
     return { items: updatedItems, totalAmount: updatedAmount };  
