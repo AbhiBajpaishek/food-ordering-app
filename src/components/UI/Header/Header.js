@@ -23,7 +23,7 @@ const Header = () =>{
            </div>
            <Cart onClick = {showCartHandler}></Cart>
            {showCart && <Modal onhideCartHandler ={hideCartHandler}>
-            <CartItems></CartItems>                 
+            <CartItems onhideCartHandler ={hideCartHandler}></CartItems>                 
            </Modal>}
         </nav>
     </React.Fragment>

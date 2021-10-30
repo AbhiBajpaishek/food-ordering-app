@@ -1,0 +1,31 @@
+section{
+    text-align: left;
+}
+
+.checkout-form__action{
+    width: 33%;
+}
+
+.checkout-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 150px;
+}
+
+.checkout-form > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-form > div label{
+    width: 130px;
+}
+
+.error{
+    min-width: 234px;
+    color: red;
+    font-size: 12px;
+}
+
+

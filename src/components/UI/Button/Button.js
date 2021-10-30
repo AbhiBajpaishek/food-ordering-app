@@ -3,11 +3,11 @@ import styles from './Button.module.css';
 
 const Button = (props) => {
 
-    const onClickHanndler = () =>{
-        props.onClick();
+    const onClickHanndler = (e) =>{
+        props.onClick(e);
     }
     return <Fragment >
-        <button className={styles['btn']} onClick={onClickHanndler}>{props.value}</button>
+        <button type={props.type ? props.type : "button"} className={styles['btn']} onClick={onClickHanndler}>{props.value}</button>
     </Fragment>
 }
 

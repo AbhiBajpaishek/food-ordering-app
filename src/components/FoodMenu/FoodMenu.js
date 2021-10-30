@@ -1,28 +1,20 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import MenuItems from "../MenuItems/MenuItems";
 import Card from "../UI/Card/Card";
 import styles from "./FoodMenu.module.css";
 
-const DUMMYMENUITEM = [
-  {
-    dishName: "Sushi",
-    dishTitle: "Finest fish and veggies",
-    dishPrice: 22.29,
-  },
-  {
-    dishName: "Barbecue Burger",
-    dishTitle: "American raw, meaty",
-    dishPrice: 12.33,
-  },
-  {
-    dishName: "Green bowl",
-    dishTitle: "Healthy.. and green",
-    dishPrice: 9.99,
-  },
-];
-
 const FoodMenu = () => {
-  const menuItems = DUMMYMENUITEM;
+  const [menuItems,setMenuItems] = useState([]);
+
+  useEffect(()=>{
+    fetch('https://food--ordering-default-rtdb.firebaseio.com/menu.json').then((response) => {
+      return response.json();
+    }).then((data) => {
+        const items = [];
+        Object.keys(data).map(key => items.push(data[key]))
+        setMenuItems(items);
+    }).catch((err) => console.log(err));
+  },[])
 
   return (
     <Card className={styles["menu-items"]}>

@@ -9,3 +9,7 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+
+hr{
+    margin: 0.5rem 0rem;
+}

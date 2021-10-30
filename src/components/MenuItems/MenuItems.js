@@ -18,6 +18,7 @@ const MenuItems = (props) => {
        dishPrice:props.dishPrice,
        dishQuantity:quantity
      })
+     setQuantity(1);
   }
 
   return (

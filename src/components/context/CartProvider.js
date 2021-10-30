@@ -37,6 +37,8 @@ const cartReducer = (state, action) => {
     }
     return { items: updatedItems, totalAmount: updatedAmount };  
   }
+  else if(action.type === "TRUNCATE")
+    return defaultState;
   return defaultState;
 };
 
@@ -51,11 +53,14 @@ const CartProvider = (props) => {
     dispatchCartState({ type: "REMOVE", item: item });
   };
 
+  const truncateDishHandler = () => dispatchCartState({type:"TRUNCATE"});
+
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addDishHandler,
     removeItem: removeDishHandler,
+    truncateItems:truncateDishHandler
   };
 
   return (
